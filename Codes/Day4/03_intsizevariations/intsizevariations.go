@@ -11,6 +11,9 @@ func main() {
 
 	// Signed integers
 	var i8 int8 = 127
+	// fmt.Println(i8 + 3)
+
+	//  -128 to 127 --> 256
 	var i16 int16 = 32767
 	var i32 int32 = 2147483647
 	var i64 int64 = 9223372036854775807
@@ -18,6 +21,7 @@ func main() {
 
 	// Unsigned integers
 	var u8 uint8 = 255
+	// 0 - 255
 	var u16 uint16 = 65535
 	var u32 uint32 = 4294967295
 	var u64 uint64 = 18446744073709551615
