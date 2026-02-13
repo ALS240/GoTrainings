@@ -45,7 +45,7 @@ func main() {
 	// - VIII → 8
 	// - IX → 9
 	// - X → 10
-	// For invalid input → "Invalid Roman numeral"
+	// For invalid input → "Invalid Roman numeral".
 
 	fmt.Println("Q5. Banking Transaction System")
 	// Simulate banking operations:
@@ -97,5 +97,75 @@ func main() {
 	// 3. T/F: You can use float values in switch cases
 	// 4. T/F: Default case is mandatory in switch
 	// 5. T/F: Tagless switch can have conditions in cases
+	var x = "a"
+	switch x {
+	case "a", "e", "i", "o", "u", "A", "E", "I", "O", "U":
+		fmt.Println("Vowel")
+	default:
+		fmt.Println("Not a letter")
+	}
+	var height=1.68
+	var weight=93.0
+	var bmi=weight/(height*height)
+	switch {
+	case bmi<18.5:
+		fmt.Printf("BMI: %.2f, Category: Underweight\n", bmi)
+	case bmi>=18.5 && bmi<25:
+		fmt.Printf("BMI: %.2f, Category: Normal\n", bmi)	
+	case bmi>=25 && bmi<30:
+		fmt.Printf("BMI: %.2f, Category: Overweight\n", bmi)
+	default:
+		fmt.Printf("BMI: %.2f, Category: Obese\n", bmi)
+	} 
+
+	var age=30
+	var dayType="weekday"
+	var isStudent=true
+	var basePrice=10.0
+	var finalPrice float64
+	if age<12{
+		basePrice*=0.5
+
+	}else if age>=65{
+		basePrice*=0.7
+	}else if age>=12 && age <=65 && isStudent && dayType=="weekday"{
+		basePrice*=0.8
+	}
+	if dayType=="weekend"{
+		basePrice+=2
+	}else if dayType!="weekday"{
+		fmt.Println("Invalid day type")
+	}else{
+		finalPrice=basePrice
+	}
+	fmt.Printf("Final ticket price: $%.2f\n", finalPrice)
+
+
+	var roman="IX"
+	switch roman{
+	case "I":
+		fmt.Println("1")	
+	case "II":
+		fmt.Println("2")
+	case "III":
+		fmt.Println("3")
+	case "IV":
+		fmt.Println("4")
+	case "V":
+		fmt.Println("5")
+	case "VI":
+		fmt.Println("6")
+	case "VII":
+		fmt.Println("7")
+	case "VIII":
+		fmt.Println("8")
+	case "IX":
+		fmt.Println("9")
+	case "X":
+		fmt.Println("10")
+	default:
+		fmt.Println("Invalid Roman numeral.")
+	}
 
 }
+
