@@ -167,5 +167,47 @@ func main() {
 		fmt.Println("Invalid Roman numeral.")
 	}
 
+	accountA := 1000.0
+	accountB := 500.0
+
+	var transaction string
+	var amount float64
+
+	transaction = "transfer" 
+	amount = 200.0
+
+	switch tx := transaction; tx {
+
+	case "deposit":
+		accountA += amount
+		fmt.Println("Deposit successful.")
+		fmt.Println("Updated Balance:", accountA)
+
+	case "withdraw":
+		if amount <= accountA {
+			accountA -= amount
+			fmt.Println("Withdrawal successful.")
+			fmt.Println("Updated Balance:", accountA)
+		} else {
+			fmt.Println("Insufficient balance.")
+		}
+
+	case "balance":
+		fmt.Println("Current Balance:", accountA)
+
+	case "transfer":
+		if amount <= accountA {
+			accountA -= amount
+			accountB += amount
+			fmt.Println("Transfer successful.")
+			fmt.Println("AccountA Balance:", accountA)
+			fmt.Println("AccountB Balance:", accountB)
+		} else {
+			fmt.Println("Insufficient balance for transfer.")
+		}
+
+	default:
+		fmt.Println("Invalid operation")
+	}
 }
 
